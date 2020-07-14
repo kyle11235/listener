@@ -1,0 +1,147 @@
+{
+    "eventType": "txOnChannel",
+    "subid": "543b9890-c35e-487f-be08-3c463c0c5156",
+    "channel": "default",
+    "txid": "47258d05a625179c416d7a71b43dbdca4f0cff19d6be4035bbc2e3199de25f20",
+    "eventMsg": [
+        {
+            "header": {
+                "creator": {
+                    "mspId": "Seller",
+                    "idBytes": "-----BEGIN CERTIFICATE-----\nMIICFzCCAb6gAwIBAgIUOVqGhNnylKlHz+C6mqNRV+yyqQEwCgYIKoZIzj0EAwIw\nIjEPMA0GA1UEChMGU2VsbGVyMQ8wDQYDVQQDEwZTZWxsZXIwHhcNMjAwNzA2MDI0\nMTAwWhcNMjMwNzA2MDI0NjAwWjA7MRwwCwYDVQQLEwR1c2VyMA0GA1UECxMGU2Vs\nbGVyMRswGQYDVQQDDBJTZWxsZXJfZGVmYXVsdHVzZXIwWTATBgcqhkjOPQIBBggq\nhkjOPQMBBwNCAASLAIbSblpERKfmcBVo9Nub64b9lLRcY89cqb/W5K+LwoLoGpyV\necYGnuMmaNMCbibeBdjc+S6rqRZeImS7Tetyo4G4MIG1MA4GA1UdDwEB/wQEAwIH\ngDAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSxWA8yvWp6iuqGULWtrSROAPi73TAf\nBgNVHSMEGDAWgBQl2XSrG6vSIl3Jo5BWkPVo2G893jBVBgNVHREETjBMgglsb2Nh\nbGhvc3SCPzAwRTA3NUQ0MDJBODQ5NzE5MDBGNjUwNDlCQjJBNjQxLmJsb2NrY2hh\naW4ub2NwLm9yYWNsZWNsb3VkLmNvbTAKBggqhkjOPQQDAgNHADBEAiA4n3tKhMTo\n96w+0ZCiX+1YtKxr1ruRNpXy/2jSDIG9VQIgLSpTP2P7MqXyyO+TazPFmqqfvRk+\nhtS5SZTh8SCrqKE=\n-----END CERTIFICATE-----\n"
+                },
+                "nonce": {
+                    "type": "base64",
+                    "data": "4QpXYXcJcpg9YtINw4DbDZo2yIf1d8OX"
+                }
+            },
+            "payload": {
+                "chaincodeProposalPayload": {
+                    "input": {
+                        "type": "base64",
+                        "data": "CpAECAESDBIKb3JkZXJjaGFpbhr9AwoLY3JlYXRlT3JkZXIK7QN7InR5cGUiOiJwdXJjaGFzZW9yZGVyIiwidHJhbmlkIjoiUlNIS1BPMjAwMDEzOTQiLCJ0cmFuZGF0ZSI6IjgvNy8yMDIwIiwiZW50aXR5IjoiQ29sZ2F0ZS1QYWxtb2xpdmUgKEhLKSBMaW1pdGVkIOmrmOmcsua9lCIsImVudGl0eWlkIjoiVkNQMDAxIiwic3Vic2lkaWFyeSI6IlJTSEsiLCJsb2NhdGlvbiI6IlJTSEsiLCJzdGF0dXMiOiJQZW5kaW5nIFJlY2VpcHQiLCJzaGlwZGF0ZSI6IjExLzcvMjAyMCIsInNoaXBwaW5nYWRkcmVzcyI6IiIsImJpbGxpbmdhZGRyZXNzIjoiMTh0aCBmbG9vciwgQ2F1c2V3YXkgQmF5IFBsYXphIEksIDQ4OSBIZW5uZXNzeSBSb2FkIiwibWVtbyI6IiIsIml0ZW0iOlt7Iml0ZW0iOiJBLUFYMDAwNyIsInJhdGUiOiIyMS41NyIsInF1YW50aXR5IjozMDB9LHsiaXRlbSI6IkEtQVgwMDA1IiwicmF0ZSI6IjIxLjU3IiwicXVhbnRpdHkiOjMwMH0seyJpdGVtIjoiQS1BWDAwMjMiLCJyYXRlIjoiMjEuNTciLCJxdWFudGl0eSI6MTIwfV19"
+                    }
+                },
+                "action": {
+                    "proposalResponsePayload": {
+                        "proposalHash": "f4e48b5f26f0b7ceccfbd9b80b8928fdaf66e30c8af3bc59e683d5c87e835368",
+                        "extension": {
+                            "results": {
+                                "dataModel": 0,
+                                "nsRwset": [
+                                    {
+                                        "namespace": "lscc",
+                                        "rwset": {
+                                            "reads": [
+                                                {
+                                                    "key": "orderchain",
+                                                    "version": {
+                                                        "blockNum": 3,
+                                                        "txNum": 0
+                                                    }
+                                                }
+                                            ],
+                                            "rangeQueriesInfo": [],
+                                            "writes": []
+                                        }
+                                    },
+                                    {
+                                        "namespace": "orderchain",
+                                        "rwset": {
+                                            "reads": [],
+                                            "rangeQueriesInfo": [],
+                                            "writes": [
+                                                {
+                                                    "key": "\u0000order\u0000RSHKPO20001394\u0000",
+                                                    "isDelete": false,
+                                                    "value": {
+                                                        "type": "JSON",
+                                                        "data": {
+                                                            "tranid": "RSHKPO20001394",
+                                                            "shippingaddress": "",
+                                                            "trandate": "8/7/2020",
+                                                            "memo": "",
+                                                            "entityid": "VCP001",
+                                                            "type": "purchaseorder",
+                                                            "subsidiary": "RSHK",
+                                                            "billingaddress": "18th floor, Causeway Bay Plaza I, 489 Hennessy Road",
+                                                            "Item": [
+                                                                {
+                                                                    "item": "A-AX0007",
+                                                                    "quantity": "",
+                                                                    "rate": "21.57"
+                                                                },
+                                                                {
+                                                                    "item": "A-AX0005",
+                                                                    "quantity": "",
+                                                                    "rate": "21.57"
+                                                                },
+                                                                {
+                                                                    "item": "A-AX0023",
+                                                                    "quantity": "",
+                                                                    "rate": "21.57"
+                                                                }
+                                                            ],
+                                                            "location": "RSHK",
+                                                            "entity": "Colgate-Palmolive (HK) Limited ???",
+                                                            "status": "Pending Receipt",
+                                                            "shipdate": "11/7/2020"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            "events": {
+                                "chaincodeId": "",
+                                "txId": "",
+                                "eventName": "",
+                                "payload": {
+                                    "type": "UTF-8",
+                                    "data": ""
+                                }
+                            },
+                            "response": {
+                                "status": 200,
+                                "message": "",
+                                "payload": {
+                                    "type": "UTF-8",
+                                    "data": ""
+                                }
+                            },
+                            "chaincodeId": {
+                                "path": "",
+                                "name": "orderchain",
+                                "version": "v1"
+                            }
+                        }
+                    },
+                    "endorsements": [
+                        {
+                            "endorser": {
+                                "mspId": "Seller",
+                                "idBytes": "-----BEGIN CERTIFICATE-----\nMIICGTCCAb+gAwIBAgIUbQuAL52ZAMx2GW1Yle/4KcqFmREwCgYIKoZIzj0EAwIw\nIjEPMA0GA1UEChMGU2VsbGVyMQ8wDQYDVQQDEwZTZWxsZXIwHhcNMjAwNzA2MDI0\nMjAwWhcNMjMwNzA2MDI0NzAwWjA0MRwwCwYDVQQLEwRwZWVyMA0GA1UECxMGU2Vs\nbGVyMRQwEgYDVQQDEwtTZWxsZXJwZWVyMTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABGSwxedU5FlvRaFSkCL4sLtVIdMmz1zZXJ4lQB905Y4AyTBkoBdWkuvecyGt\n4zmj9UHoBkwLwxQ9AAQ/zx0PLZCjgcAwgb0wDgYDVR0PAQH/BAQDAgeAMAwGA1Ud\nEwEB/wQCMAAwHQYDVR0OBBYEFCUjNjXjQ3WeKzp/qXJ3yjRe3JgYMB8GA1UdIwQY\nMBaAFCXZdKsbq9IiXcmjkFaQ9WjYbz3eMF0GA1UdEQRWMFSCCWxvY2FsaG9zdIJH\nREExM0VDRjQwM0IzNEFEN0E5NURBMjYxOTE1NUNFOUEtcHJpdmF0ZS5ibG9ja2No\nYWluLm9jcC5vcmFjbGVjbG91ZC5jb20wCgYIKoZIzj0EAwIDSAAwRQIhAIU4tqWb\nSIx7JIdtDuAFO/8j8w048QRSXXo1hf5anntgAiB/abOZ2F24qrk7SBr7TJzkOIR0\nbjzLBQcNM9iCmTSdQA==\n-----END CERTIFICATE-----\n"
+                            },
+                            "signature": {
+                                "type": "base64",
+                                "data": "MEUCIQCvDIzdHtnxyVX8YQgOr/pf7kaD/XjLl1hN8mwkRsWBLwIgcVVbO61JSwxgVB9c6aIebX1nE3i+7+jSb8VxLVZ4eXc="
+                            }
+                        },
+                        {
+                            "endorser": {
+                                "mspId": "Seller",
+                                "idBytes": "-----BEGIN CERTIFICATE-----\nMIICGDCCAb+gAwIBAgIULvhiOpK7gVgjf5HK/1ppj+tToSkwCgYIKoZIzj0EAwIw\nIjEPMA0GA1UEChMGU2VsbGVyMQ8wDQYDVQQDEwZTZWxsZXIwHhcNMjAwNzA2MDI0\nMjAwWhcNMjMwNzA2MDI0NzAwWjA0MRwwCwYDVQQLEwRwZWVyMA0GA1UECxMGU2Vs\nbGVyMRQwEgYDVQQDEwtTZWxsZXJwZWVyMDBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABHFe6RopdqosLESqNaZpZJOE2g3C3jlWkXKYxAFm+2rmp1XxeRIBvUmCf5Rx\n83XjNww5vqeYkX4ZnwSSxhXCcwyjgcAwgb0wDgYDVR0PAQH/BAQDAgeAMAwGA1Ud\nEwEB/wQCMAAwHQYDVR0OBBYEFAdbojPEiBj49Y+rG1dWu5UR79D2MB8GA1UdIwQY\nMBaAFCXZdKsbq9IiXcmjkFaQ9WjYbz3eMF0GA1UdEQRWMFSCCWxvY2FsaG9zdIJH\nREExM0VDRjQwM0IzNEFEN0E5NURBMjYxOTE1NUNFOUEtcHJpdmF0ZS5ibG9ja2No\nYWluLm9jcC5vcmFjbGVjbG91ZC5jb20wCgYIKoZIzj0EAwIDRwAwRAIgMGsAMlC5\nBoQFbdeVPKV+EguO/cnTJV0WEzL0w+L+/7MCICLSfaT3LBTB2aeGgsEzGfz8Urv2\nhJvtT7JA+62u4bO3\n-----END CERTIFICATE-----\n"
+                            },
+                            "signature": {
+                                "type": "base64",
+                                "data": "MEQCIForvG97TWTawkZA1zRMJPlM7Jw1GhJ69/WWews705iNAiBjnCRWluSXIV49g4ZNSPQ9nhUoT0iV9mbliB6Sfj1CyA=="
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
