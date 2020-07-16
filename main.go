@@ -2,10 +2,13 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"net/http"
 
+	"github.com/kyleoracle/listener/chaincode"
 	"github.com/kyleoracle/listener/config"
+
 	"github.com/labstack/echo" // https://echo.labstack.com/guide
 	"github.com/labstack/echo/middleware"
 	"github.com/tidwall/gjson" // https://programming.vip/docs/super-easy-to-parse-json-package-gjson-with-golang.html
@@ -31,18 +34,39 @@ func main() {
 		tx := gjson.GetBytes(reqBody, `eventMsg.0.payload.action.proposalResponsePayload.extension.results.nsRwset.#(namespace=="orderchain").rwset.writes.0.value.data`)
 		fmt.Printf("tx=%s\n\n", tx)
 
-		txBytes := []byte(tx.Raw)                                          // string -> bytes = []byte(tx.Raw), bytes -> string = string(data[:])
-		req, err := http.NewRequest("POST", url, bytes.NewBuffer(txBytes)) // interface io.Reader, read bytes
+		txBytes := []byte(tx.Raw) // string -> bytes = []byte(tx.Raw), bytes -> string = string(data[:])
+
+		// data
+		order := &chaincode.OrderNetsuite{
+			URI: "salesorder",
+		}
+		err := json.Unmarshal(txBytes, &order.Data)
+		if err != nil {
+			fmt.Println("Unmarshal err=", err.Error())
+		}
+
+		orderBytes, err := json.Marshal(order)
+		if err != nil {
+			fmt.Println("Marshal err=", err.Error())
+		}
+
+		fmt.Printf("order bytes=%s\n\n", orderBytes)
+
+		req, err := http.NewRequest("POST", url, bytes.NewBuffer(orderBytes)) // interface io.Reader, read bytes
 		req.Header.Set("Content-Type", "application/json")
+
+		// auth
+		req.Header.Set("Authorization", config.Config["auth"])
 
 		client := &http.Client{}
 		resp, err := client.Do(req)
 		if err != nil {
-			panic(err)
+			// panic(err)
+			fmt.Println("post err=", err.Error())
 		}
 		defer resp.Body.Close()
 
-		fmt.Println("response Status=", resp.Status)
+		fmt.Println("post response Status=", resp.Status)
 
 	}))
 

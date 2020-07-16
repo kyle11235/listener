@@ -1,3 +1,5 @@
 {
-    "url": "http://localhost:9000"
+    "url1": "http://localhost:9000",
+    "url": "xxx",
+    "auth": "xxx"
 }
