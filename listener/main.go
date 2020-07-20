@@ -43,7 +43,7 @@ func main() {
 func fn(context echo.Context) error {
 	bodyBytes, _ := ioutil.ReadAll(context.Request().Body)
 	go post(bodyBytes)
-	fmt.Println("fn sends response")
+	fmt.Println("\n\nnew tx, fn sends response")
 	return context.String(http.StatusOK, "Hello, World!")
 }
 

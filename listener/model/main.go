@@ -1,9 +1,12 @@
 package model
 
 type Order struct {
-	Entity string      `json:"entity"`
-	Item   []OrderItem `json:"item"`
-	Date   string      `json:"trandate"` // same with Trandate
+	Entity       string      `json:"entity"`
+	Currency     string      `json:"currency"`
+	Exchangerate string      `json:"exchangerate"`
+	Memo         string      `json:"memo"`
+	Item         []OrderItem `json:"item"`
+	Date         string      `json:"trandate"` // same with Trandate
 }
 
 type OrderItem struct {

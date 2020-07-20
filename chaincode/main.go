@@ -25,6 +25,8 @@ type Order struct {
 	Shippingaddress string      `json:"shippingaddress"`
 	Billingaddress  string      `json:"billingaddress"`
 	Memo            string      `json:"memo"`
+	Currency        string      `json:"currency"`
+	Exchangerate    string      `json:"exchangerate"`
 	Item            []OrderItem `json:"item"`
 }
 
