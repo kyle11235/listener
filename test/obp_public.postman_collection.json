@@ -1,76 +1,12 @@
 {
 	"info": {
-		"_postman_id": "f7dd9dc1-69ec-477a-9735-f6e690698a93",
-		"name": "obp",
+		"_postman_id": "25f49942-4815-4cf7-8647-4220f5c18bca",
+		"name": "obp_public",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "obp op invoke",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "xxx",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "xxx",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Basic 11",
-						"type": "text",
-						"disabled": true
-					},
-					{
-						"key": "Content-type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"chaincode\":\"log\",\"args\":[\"createLog\",\"123\", \"userName\", \"adminName\", \"schedule\", \"command\", \"comment\", \"approveResult\", \"timestamp\"]}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:10001/restproxy/api/v2/channels/default/transactions",
-					"host": [
-						"localhost"
-					],
-					"port": "10001",
-					"path": [
-						"restproxy",
-						"api",
-						"v2",
-						"channels",
-						"default",
-						"transactions"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "obp cloud invoke",
+			"name": "obp invoke",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -108,7 +44,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"channel\":\"default\",\"chaincode\":\"orderchain\",\"method\":\"createOrder\",\"args\":[\"{\\\"type\\\":\\\"purchaseorder\\\",\\\"tranid\\\":\\\"RSHKPO20001394\\\",\\\"trandate\\\":\\\"8\\/7\\/2020\\\",\\\"entity\\\":\\\"Colgate-Palmolive (HK) Limited 高露潔\\\",\\\"entityid\\\":\\\"VCP001\\\",\\\"subsidiary\\\":\\\"RSHK\\\",\\\"location\\\":\\\"RSHK\\\",\\\"status\\\":\\\"Pending Receipt\\\",\\\"shipdate\\\":\\\"11\\/7\\/2020\\\",\\\"shippingaddress\\\":\\\"\\\",\\\"billingaddress\\\":\\\"18th floor, Causeway Bay Plaza I, 489 Hennessy Road\\\",\\\"memo\\\":\\\"\\\",\\\"item\\\":[{\\\"item\\\":\\\"A-AX0007\\\",\\\"rate\\\":\\\"21.57\\\",\\\"quantity\\\":\\\"300\\\"}]}\"],\"payloadType\":\"JSON\",\"chaincodeVer\":\"v1\"}",
+					"raw": "{\"channel\":\"mychannel\",\"chaincode\":\"orderchain\",\"method\":\"createOrder\",\"args\":[\"{\\\"type\\\":\\\"purchaseorder\\\",\\\"tranid\\\":\\\"RSHKPO20001394\\\",\\\"trandate\\\":\\\"8\\/7\\/2020\\\",\\\"currency\\\":\\\"HKD\\\",\\\"exchangerate\\\":\\\"0.129\\\",\\\"entity\\\":\\\"7 smismiAbbott Inc.\\\",\\\"entityid\\\":\\\"VCP001\\\",\\\"subsidiary\\\":\\\"RSHK\\\",\\\"location\\\":\\\"RSHK\\\",\\\"status\\\":\\\"Pending Receipt\\\",\\\"shipdate\\\":\\\"11\\/7\\/2020\\\",\\\"shippingaddress\\\":\\\"\\\",\\\"billingaddress\\\":\\\"18th floor, Causeway Bay Plaza I, 489 Hennessy Road\\\",\\\"memo\\\":\\\"blockchain\\\",\\\"item\\\":[{\\\"item\\\":\\\"(120cm) Snoopy x Kenny Scharf\\\",\\\"rate\\\":\\\"21.57\\\",\\\"quantity\\\":\\\"300\\\"}]}\"],\"payloadType\":\"JSON\",\"chaincodeVer\":\"v2\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -139,76 +75,7 @@
 			"response": []
 		},
 		{
-			"name": "obp cloud invoke - valid order",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "xxx",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "xxx",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "",
-						"disabled": true
-					},
-					{
-						"key": "Content-type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "",
-						"type": "text",
-						"value": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"channel\":\"default\",\"chaincode\":\"orderchain\",\"method\":\"createOrder\",\"args\":[\"{\\\"type\\\":\\\"purchaseorder\\\",\\\"tranid\\\":\\\"RSHKPO20001394\\\",\\\"trandate\\\":\\\"8\\/7\\/2020\\\",\\\"entity\\\":\\\"7 smismiAbbott Inc.\\\",\\\"entityid\\\":\\\"VCP001\\\",\\\"subsidiary\\\":\\\"RSHK\\\",\\\"location\\\":\\\"RSHK\\\",\\\"status\\\":\\\"Pending Receipt\\\",\\\"shipdate\\\":\\\"11\\/7\\/2020\\\",\\\"shippingaddress\\\":\\\"\\\",\\\"billingaddress\\\":\\\"18th floor, Causeway Bay Plaza I, 489 Hennessy Road\\\",\\\"memo\\\":\\\"\\\",\\\"item\\\":[{\\\"item\\\":\\\"(120cm) Snoopy x Kenny Scharf\\\",\\\"rate\\\":\\\"21.57\\\",\\\"quantity\\\":\\\"300\\\"}]}\"],\"payloadType\":\"JSON\",\"chaincodeVer\":\"v1\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://00E075D402A84971900F65049BB2A641.blockchain.ocp.oraclecloud.com:443/restproxy1/bcsgw/rest/v1/transaction/invocation",
-					"protocol": "https",
-					"host": [
-						"00E075D402A84971900F65049BB2A641",
-						"blockchain",
-						"ocp",
-						"oraclecloud",
-						"com"
-					],
-					"port": "443",
-					"path": [
-						"restproxy1",
-						"bcsgw",
-						"rest",
-						"v1",
-						"transaction",
-						"invocation"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "obp cloud get",
+			"name": "obp get",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -277,7 +144,7 @@
 			"response": []
 		},
 		{
-			"name": "obp cloud subscribe event",
+			"name": "subscribe obp event",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -304,7 +171,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"requests\": [\n    {\n      \"eventType\": \"txOnChannel\",\n      \"callbackURL\": \"http://b33a061492b6.ngrok.io\",\n      \"callbackTlsCerts\": {\n          \"caCert\": \"-----BEGIN CERTIFICATE-----\\nMIIFqTCCBJGgAwIBAgIQDFpB8s4z1YKuTzGgVCQwTDANBgkqhkiG9w0BAQsFADBe\\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\\nd3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRSYXBpZFNTTCBSU0EgQ0EgMjAxODAe\\nFw0yMDAzMTAwMDAwMDBaFw0yMTAzMTAxMjAwMDBaMBUxEzARBgNVBAMMCioubmdy\\nb2suaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDpH9Il6kQM9crO\\nZiRqy2PRX8ceYcr087K/ix/r5HSJgjxMCw9s6E0DCyl0cekHuNl/7aoOF+CcJnKd\\n8hKPU8pUulR2Mu144f6WUdooppV+Q64WJrsL63LgW/diRMFfK9jiSpSkeVvb0DSS\\nDBq8Q9MgkazIkeHF3RZta3R6B8nRXUY5mnSjccXckjTBRKDOanSa9+wqqu0n9C1y\\nEUWsm3bnKP0R6D7Y5M3EsltnW7vQLHOJwbjT3T/A3M/Jy4tbJjuR5HGNortmWU/8\\nSEvt+4Sn/80xa5Id/sknVfwFeSvHO5lpD3UvncU2j3hyJj+Ncbu2ALoDab2QnV6F\\nZQ1+CV2nAgMBAAGjggKqMIICpjAfBgNVHSMEGDAWgBRTyhdZ/GvAAyEvGq7kqqgc\\nglbadTAdBgNVHQ4EFgQUrbm2sQzh+SfHeB8GtcTG8OqKOuswHwYDVR0RBBgwFoIK\\nKi5uZ3Jvay5pb4IIbmdyb2suaW8wDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQG\\nCCsGAQUFBwMBBggrBgEFBQcDAjA+BgNVHR8ENzA1MDOgMaAvhi1odHRwOi8vY2Rw\\nLnJhcGlkc3NsLmNvbS9SYXBpZFNTTFJTQUNBMjAxOC5jcmwwTAYDVR0gBEUwQzA3\\nBglghkgBhv1sAQIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQu\\nY29tL0NQUzAIBgZngQwBAgEwdQYIKwYBBQUHAQEEaTBnMCYGCCsGAQUFBzABhhpo\\ndHRwOi8vc3RhdHVzLnJhcGlkc3NsLmNvbTA9BggrBgEFBQcwAoYxaHR0cDovL2Nh\\nY2VydHMucmFwaWRzc2wuY29tL1JhcGlkU1NMUlNBQ0EyMDE4LmNydDAJBgNVHRME\\nAjAAMIIBAgYKKwYBBAHWeQIEAgSB8wSB8ADuAHUA9lyUL9F3MCIUVBgIMJRWjuNN\\nExkzv98MLyALzE7xZOMAAAFwxfKuNAAABAMARjBEAiAR83FFbzfuDrVNG2WFPCe2\\nb7Fx3B9KGCxzn5TJd7ZTaQIgPJh/ozPwctijMF5+rOiKU/mLSZF79cbAVJwg+KNQ\\nq/sAdQBc3EOS/uarRUSxXprUVuYQN/vV+kfcoXOUsl7m9scOygAAAXDF8q5AAAAE\\nAwBGMEQCIDM3yRhhx5/YlhwFf9Dxcf+ZZfLCywwZkP2ImZDzCuYnAiBl9Xxuq4A9\\nB7nWeWUZy5eYxZkh+hq5n7hogUICyF/gUDANBgkqhkiG9w0BAQsFAAOCAQEAH4po\\n9N/FWXaoh6R0KltfmN4/uy0/6e3FciIIzRFwPt9Ix4iskRNelDNYuNj6KNe0vXXl\\nawb0DrT6IQ2oEaO+DUa1mPCBH1Uk7tLEe7kW3VztUt5R1YtawaIhh5WJYrJ01Kdt\\n24G6DgtubhwDI7iw2AuBzQLNS225G3XBQ8qAnRWQTh+3aapCPWLCTdBOcobpCj7s\\nzNsYw1lt++2Bw42pSd9XVCFwG+gi7Xfc/ylUZ0qLnLT6b9FoN+zNdYaAc4LBRWn4\\nyW5wSZO/XnLt/P/OkK0G6sZGbJ8KvB2LeQAVlF8ujWQzzJlLFcYQmpJ7+h4Bw3J1\\nZc7Skf1nmM19kIjnrA==\\n-----END CERTIFICATE-----\"\n        },\n      \"expires\": \"3M\",\n      \"channel\": \"default\",\n      \"payloadType\": \"JSON\"\n    }\n  ]\n}\n"
+					"raw": "{\n  \"requests\": [\n    {\n      \"eventType\": \"txOnChannel\",\n      \"callbackURL\": \"http://b33a061492b6.ngrok.io\",\n      \"callbackTlsCerts\": {\n          \"caCert\": \"-----BEGIN CERTIFICATE-----\\nMIIFqTCCBJGgAwIBAgIQDFpB8s4z1YKuTzGgVCQwTDANBgkqhkiG9w0BAQsFADBe\\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\\nd3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRSYXBpZFNTTCBSU0EgQ0EgMjAxODAe\\nFw0yMDAzMTAwMDAwMDBaFw0yMTAzMTAxMjAwMDBaMBUxEzARBgNVBAMMCioubmdy\\nb2suaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDpH9Il6kQM9crO\\nZiRqy2PRX8ceYcr087K/ix/r5HSJgjxMCw9s6E0DCyl0cekHuNl/7aoOF+CcJnKd\\n8hKPU8pUulR2Mu144f6WUdooppV+Q64WJrsL63LgW/diRMFfK9jiSpSkeVvb0DSS\\nDBq8Q9MgkazIkeHF3RZta3R6B8nRXUY5mnSjccXckjTBRKDOanSa9+wqqu0n9C1y\\nEUWsm3bnKP0R6D7Y5M3EsltnW7vQLHOJwbjT3T/A3M/Jy4tbJjuR5HGNortmWU/8\\nSEvt+4Sn/80xa5Id/sknVfwFeSvHO5lpD3UvncU2j3hyJj+Ncbu2ALoDab2QnV6F\\nZQ1+CV2nAgMBAAGjggKqMIICpjAfBgNVHSMEGDAWgBRTyhdZ/GvAAyEvGq7kqqgc\\nglbadTAdBgNVHQ4EFgQUrbm2sQzh+SfHeB8GtcTG8OqKOuswHwYDVR0RBBgwFoIK\\nKi5uZ3Jvay5pb4IIbmdyb2suaW8wDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQG\\nCCsGAQUFBwMBBggrBgEFBQcDAjA+BgNVHR8ENzA1MDOgMaAvhi1odHRwOi8vY2Rw\\nLnJhcGlkc3NsLmNvbS9SYXBpZFNTTFJTQUNBMjAxOC5jcmwwTAYDVR0gBEUwQzA3\\nBglghkgBhv1sAQIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQu\\nY29tL0NQUzAIBgZngQwBAgEwdQYIKwYBBQUHAQEEaTBnMCYGCCsGAQUFBzABhhpo\\ndHRwOi8vc3RhdHVzLnJhcGlkc3NsLmNvbTA9BggrBgEFBQcwAoYxaHR0cDovL2Nh\\nY2VydHMucmFwaWRzc2wuY29tL1JhcGlkU1NMUlNBQ0EyMDE4LmNydDAJBgNVHRME\\nAjAAMIIBAgYKKwYBBAHWeQIEAgSB8wSB8ADuAHUA9lyUL9F3MCIUVBgIMJRWjuNN\\nExkzv98MLyALzE7xZOMAAAFwxfKuNAAABAMARjBEAiAR83FFbzfuDrVNG2WFPCe2\\nb7Fx3B9KGCxzn5TJd7ZTaQIgPJh/ozPwctijMF5+rOiKU/mLSZF79cbAVJwg+KNQ\\nq/sAdQBc3EOS/uarRUSxXprUVuYQN/vV+kfcoXOUsl7m9scOygAAAXDF8q5AAAAE\\nAwBGMEQCIDM3yRhhx5/YlhwFf9Dxcf+ZZfLCywwZkP2ImZDzCuYnAiBl9Xxuq4A9\\nB7nWeWUZy5eYxZkh+hq5n7hogUICyF/gUDANBgkqhkiG9w0BAQsFAAOCAQEAH4po\\n9N/FWXaoh6R0KltfmN4/uy0/6e3FciIIzRFwPt9Ix4iskRNelDNYuNj6KNe0vXXl\\nawb0DrT6IQ2oEaO+DUa1mPCBH1Uk7tLEe7kW3VztUt5R1YtawaIhh5WJYrJ01Kdt\\n24G6DgtubhwDI7iw2AuBzQLNS225G3XBQ8qAnRWQTh+3aapCPWLCTdBOcobpCj7s\\nzNsYw1lt++2Bw42pSd9XVCFwG+gi7Xfc/ylUZ0qLnLT6b9FoN+zNdYaAc4LBRWn4\\nyW5wSZO/XnLt/P/OkK0G6sZGbJ8KvB2LeQAVlF8ujWQzzJlLFcYQmpJ7+h4Bw3J1\\nZc7Skf1nmM19kIjnrA==\\n-----END CERTIFICATE-----\"\n        },\n      \"expires\": \"1M\",\n      \"channel\": \"mychannel\",\n      \"payloadType\": \"JSON\"\n    }\n  ]\n}\n"
 				},
 				"url": {
 					"raw": "https://00E075D402A84971900F65049BB2A641.blockchain.ocp.oraclecloud.com:443/restproxy1/bcsgw/rest/v1/event/subscribe",
@@ -345,7 +212,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"uri\": \"salesorder\",\n    \"data\": {\n       \"entity\": \"7 smismiAbbott Inc.\",\n        \"item\": [\n            {\n                \"item\": \"(120cm) Snoopy x Kenny Scharf\",\n                \"rate\": \"1900\",\n                \"quantity\": \"1\"\n            }\n        ],\n        \"date\": \"8/7/2020\"\n    }\n}",
+					"raw": "{\n    \"uri\": \"salesorder\",\n    \"data\": {\n       \"trandate\": \"20/07/2020\",\n       \"entity\": \"7 smismiAbbott Inc.\",\n       \"currency\": \"HKD\",\n       \"exchangerate\": \"blockchain\",\n        \"item\": [\n            {\n                \"item\": \"(120cm) Snoopy x Kenny Scharf\",\n                \"rate\": \"1900\",\n                \"quantity\": \"1\"\n            }\n        ],\n        \"date\": \"8/7/2020\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -383,7 +250,7 @@
 			"response": []
 		},
 		{
-			"name": "opb cloud simluate event",
+			"name": "send sample opb event to localhost",
 			"request": {
 				"method": "POST",
 				"header": [],
